@@ -2,17 +2,17 @@ package com.cui.bean;
 
 
 public class User {
-    private String name;
+    private String username;
     private int role;
     private String password;
     private Integer id;
 
     public String getName() {
-        return name;
+        return username;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.username = username;
     }
 
     public int getRole() {

@@ -21,14 +21,14 @@ public class UserDAo {
 
         try {
             connection = JdbcUtils.getconn();
-            String sql = "select * from user where name=? and password=?";
+            String sql = "select * from user where username=? and password=?";
             preparedStatement = (PreparedStatement)connection.prepareStatement(sql);
             preparedStatement.setString(1,username);
             preparedStatement.setString(2,password);
             resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 u = new User();
-                u.setName(resultSet.getString("name"));
+                u.setName(resultSet.getString("username"));
                 u.setPassword(resultSet.getString("password"));
                 System.out.println("登录成功");
             }
@@ -50,7 +50,7 @@ public class UserDAo {
         PreparedStatement preparedStatement = null;
         try {
             connection = JdbcUtils.getconn();
-            String sql = "insert into user(id,name,password,role)values(?,?,?,?);";
+            String sql = "insert into user(id,username,password,role)values(?,?,?,?);";
             preparedStatement = (PreparedStatement)connection.prepareStatement(sql);
             preparedStatement.setInt(1,user.getId());
             preparedStatement.setString(2,user.getName());
