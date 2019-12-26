@@ -12,6 +12,7 @@ public class JdbcTest {
     public void test() {
         try {
             Connection connection = JdbcUtils.getconn();
+            System.out.println(connection);
         } catch (SQLException e) {
             e.printStackTrace();
         }

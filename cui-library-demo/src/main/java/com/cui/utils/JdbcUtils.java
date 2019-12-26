@@ -19,7 +19,7 @@ public class JdbcUtils {
 
     static{
         Properties prop = new Properties();
-        InputStream in = JdbcUtils.class.getResourceAsStream("classpath:a.properties");//不能是a.properties，因为在IDEA中文件名字就是a,与eclipse不同
+        InputStream in = JdbcUtils.class.getResourceAsStream("/a.properties");//不能是a.properties，因为在IDEA中文件名字就是a,与eclipse不同
 
         try {
             //以下四步避免了以后数据库名字等信息改变后来修改源码
